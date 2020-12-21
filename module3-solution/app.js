@@ -13,6 +13,7 @@
 
     controller.updateItems = function () {
       if (controller.searchTerm === "") {
+        controller.found = [];
         controller.isEmpty = true;
       }
       else {
@@ -33,7 +34,7 @@
     controller.onRemove = function (index) {
       controller.found.splice(index, 1);
     };
-    
+
   }
 
   MenuSearchService.$inject = ["$http"];
