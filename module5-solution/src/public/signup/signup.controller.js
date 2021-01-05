@@ -8,12 +8,12 @@
   function SignupController(UserInfoService) {
     var signupCtrl = this;
 
-    if (UserInfoService.infoAvail) {
-      signupCtrl.user = UserInfoService.getUserInfo();
-    }
+    signupCtrl.submitted = false;
+    signupCtrl.user = {};
 
     signupCtrl.submit = function () {
       UserInfoService.setUserInfo(signupCtrl.user);
+      signupCtrl.submitted = true;
     };
   }
 })();
