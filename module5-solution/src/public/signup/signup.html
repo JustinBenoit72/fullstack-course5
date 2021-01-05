@@ -1,0 +1,44 @@
+<div class="container">
+  <form name="signupForm" novalidate>
+    <input type="text" name="firstname" placeholder="First Name"
+      ng-model="signupCtrl.user.firstname"
+      required>
+      <span ng-if="signupForm.firstname.$invalid && signupForm.firstname.$touched">
+        First name must be entered
+      </span>
+      <br>
+
+    <input type="text" name="lastname" placeholder="Last Name"
+      ng-model="signupCtrl.user.lastname"
+      required>
+      <span ng-if="signupForm.lastname.$invalid && signupForm.lastname.$touched">
+        Last name must be entered
+      </span>
+      <br>
+
+    <input type="email" name="email" placeholder="Email Address"
+      ng-model="signupCtrl.user.email"
+      required>
+      <span ng-if="signupForm.email.$invalid && signupForm.email.$touched">
+        Must be a valid email address: handle@domain format
+      </span>
+      <br>
+
+    <input type="text" name="phone" placeholder="Phone ###-###-####"
+      ng-model="signupCtrl.user.phone"
+      required
+      pattern="(\d{3})-(\d{3})-(\d{4})">
+      <span ng-if="signupForm.phone.$invalid && signupForm.phone.$touched">
+        Phone must be in the format ###-###-####.
+      </span>
+      <br>
+
+    <input type="text" name="favitem" placeholder="Favorite Menu Item Code"
+      ng-model="signupCtrl.user.favitem"
+      required>
+      <br>
+
+    <button ng-disabled="signupForm.$invalid"
+            ng-click="signupCtrl.submit()">Submit</button>
+  </form>
+</div>

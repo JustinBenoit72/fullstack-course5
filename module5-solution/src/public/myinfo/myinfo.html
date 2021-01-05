@@ -1,0 +1,15 @@
+<div class="container">
+  <h1 ng-if="!userInfoCtrl.infoAvail">Not signed up yet! <a ui-sref="public.signup">Sign up Now!</a></h1>
+  <div ng-if="userInfoCtrl.infoAvail">
+    <h1>My Info:</h1>
+    <span class="col-xs-12">First Name: {{ userInfoCtrl.userInfo.firstname }}</span>
+    <span class="col-xs-12">Last Name: {{ userInfoCtrl.userInfo.lastname }}</span>
+    <span class="col-xs-12">Email: {{ userInfoCtrl.userInfo.email }}</span>
+    <span class="col-xs-12">Phone: {{ userInfoCtrl.userInfo.phone }}</span>
+    <span ng-if="userInfoCtrl.favItemValid" class="col-xs-12">Favorite Item:</span>
+    <menu-item ng-if="userInfoCtrl.favItemValid" menu-item="userInfoCtrl.favitem"></menu-item>
+    <span ng-if="!userInfoCtrl.favItemValid" class="col-xs-12">
+      Favorite Item: {{ userInfoCtrl.userInfo.favitem }}. No such menu number exists!
+    </span>
+  </div>
+</div>
